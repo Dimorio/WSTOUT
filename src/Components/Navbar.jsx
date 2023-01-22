@@ -9,6 +9,22 @@ import FrontPage from './FrontPage'
 
 const Navbar = () => {
     const style = {'marginRight': '1rem'}
+    const [movie, setMovie] = useState([])
+    const SEARCH_API = `https://api.themoviedb.org/3/search/movie/?api_key=f859b40fd1b7ffb7b279a4c41c3d0716&query=`
+    const [input, setInput] = useState('')
+    const handlerEvent = (e) =>{
+        e.preventDefault()
+        fetch(SEARCH_API + input)
+        .then((res)=>res.json())
+        .then((data)=>{
+            setMovie(data.results)
+            console.log(data.results);
+        })
+        
+    }
+    const handleChnage = (e)=>{
+        setInput(e.target.value)
+    }
   return (
     <div className='all bg-[#2A363B ]'>
     <div className="All-content relative">
@@ -33,7 +49,10 @@ const Navbar = () => {
                 </div>
         </div>
         <div className="relative flex gap-[1.2rem]">
-        <input type="text" placeholder='Search...' size={25} className='rounded-xl border-0 outline-none  py-[5px] px-[10px] placeholder:text-black text-black' />
+            <form onSubmit={handlerEvent}>
+        <input type="text" placeholder='Search...' size={25} className='rounded-xl border-0 outline-none  py-[5px] px-[10px] placeholder:text-black text-black' onChange={handleChnage} value={input} />
+
+            </form>
         <GrSearchAdvanced className='absolute top-[10px] left-[90%] cursor-pointer  '/>
         </div>
         </nav>

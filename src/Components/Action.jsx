@@ -26,7 +26,7 @@ const Action = () => {
         perPage: 3,
         autoScroll: {
           pauseOnHover: false,
-          pauseOnFocus: false,
+          pauseOnFocus: true,
           rewind: false,
           speed: 1,
           autoStart:true,

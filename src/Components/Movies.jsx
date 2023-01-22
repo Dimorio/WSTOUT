@@ -9,7 +9,6 @@ const Movies = () => {
         const response = await fetch(Url)
         const responseJson = await response.json()
         setMovie(responseJson.results)
-        console.log(responseJson);
     }
     useEffect(()=>{
         getMovie()
