@@ -1,13 +1,89 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+img {
+  object-fit: cover;
+}
+body {
+  background: #141414;
+  color: white;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #091f36;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.splide__slide img {
+  width: 100vw;
+  height: 95vh;
+  object-fit: cover;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-items > span {
+  margin: 0px 10px;
+  transition: 0.3s ease;
+}
+.nav-items span:hover {
+  color: red;
+}
+.smaller-Text {
+  font-size: 15px;
+  width: 100%;
+}
+
+#color-switcher,
+.color-switcher {
+  transition: 0.6 ease;
+}
+#color-moved {
+  position: absolute;
+  left: 40px;
+  top: 4px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  transition: 0.6 ease;
+}
+.movie-over {
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  overflow: auto;
+  max-height: 100%;
+}
+.movie:hover .movie-over {
+  transform: translateY(0%);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

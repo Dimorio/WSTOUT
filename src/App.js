@@ -1,15 +1,13 @@
-import { Employee } from "./Components/Employee";
-function App() {
+import React from "react";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+
+const App = () => {
   return (
-    <div className="App">
-      <>
-        <Employee name="Josh" role="engineer" />
-        <Employee name="mary" role="software developer" />
-        <Employee name="Miller" />
-        <Employee name="Adam" />
-      </>
-    </div>
+    <>
+      <Navbar />
+    </>
   );
-}
+};
 
 export default App;
